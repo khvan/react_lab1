@@ -12,7 +12,6 @@ class ProductDetails extends React.Component {
 
     console.log("THIS IS THE ID ==>", id, title)
     
-
     return (
       <div class="ui card">
         <div class="content">

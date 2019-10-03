@@ -7,6 +7,12 @@ import ProductReview from './ProductReview';
 
 
 class ProductShow extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {products: []}
+    
+  }
+
   render () {
     return (
       <div class="ui container">

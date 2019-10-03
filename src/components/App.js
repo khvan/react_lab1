@@ -1,13 +1,17 @@
 import React from 'react'
-import ProductDetails from './ProductDetails'
-import ProductReview from './ProductReview'
-import ProductShow from './ProductShow'
+// import ProductShow from './ProductShow'
+import ProductIndexPage from './ProductIndex'
+
+
+
 
 
 class App extends React.Component{  
   render(){
     return(
-      <ProductShow />
+      <div>
+      <ProductIndexPage />
+      </div>
     )
   }
 }

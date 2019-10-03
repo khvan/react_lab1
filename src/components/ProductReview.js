@@ -1,9 +1,22 @@
 import React from 'react';
-import StarRating from './StarRating'
+import StarRating from './StarRating';
 
-const ProductReview = props => {
 
-  const allReviews = props.product.reviews.map (review => {
+
+class ProductReview extends React.Component  {
+  deleteReview(id) {
+		console.log('id: ', id);
+    console.log('this: ', this);
+    
+		this.setState((reviews, props) => {
+			return {
+				products: state.products.filter((q) => q.id !== id)
+			};
+		});
+  }
+  
+  render(){
+  const allReviews = this.props.product.reviews.map (review => {
     return (
       <div class="ui card">
         <div class="content">
@@ -16,17 +29,28 @@ const ProductReview = props => {
             {review.body}
           </p>
         </div>
-        <StarRating max={5} current={review.rating}/>
+        <div className="ui horizontal list">
+          <StarRating max={5} current={review.rating} />
+          <div>
+            {' '}<button
+              className="ui right floated red button"
+              onClick = {()=>this.deleteReview(review.id)}
+            >
+              Delete
+            </button>
+          </div>
+        </div>
       </div>
-    );
+    )
+  
   });
-
+  
 
   return (
     <div className="ui relaxed divided list">
       {allReviews}
     </div>
   );
-};
+}};
 
 export default ProductReview;
